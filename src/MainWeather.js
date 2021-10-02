@@ -20,11 +20,13 @@ export default function WeatherDescription() {
 
           <div className="col-md">
             <li className="main-temperature">
-              <span id="temperature">15</span>{" "}
+              <span id="temperature">15</span>
+              {/*eslint-disable-next-line*/}
               <a href="#" id="celsius-link" className="units active">
                 °C
               </a>
-              <span className="unit-break"> | </span>{" "}
+              <span className="unit-break"> | </span>
+              {/*eslint-disable-next-line*/}
               <a href="#" id="fahrenheit-link" className="units">
                 °F
               </a>{" "}
@@ -34,7 +36,7 @@ export default function WeatherDescription() {
                 src="./media/09d.png"
                 className="main-weather-img image-fluid"
                 id="main-icon"
-                alt="weather image"
+                alt="weather"
               />
             </li>
           </div>
