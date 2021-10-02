@@ -1,0 +1,61 @@
+ul {
+  list-style: none;
+  text-align: right;
+}
+
+a {
+  color: #54b3a9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #626a7c;
+  text-decoration: none;
+}
+
+li.main-temperature {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -15px;
+}
+.unit-break {
+  position: relative;
+  font-size: 20px;
+  top: -15px;
+}
+
+.active {
+  color: #626a7c;
+  cursor: default;
+  text-decoration: none;
+}
+
+.main-weather-img {
+  width: 60%;
+}
+
+li.main-weather-description {
+  color: #626a7c;
+  text-align: left;
+  padding-top: 10px;
+  font-weight: lighter;
+}
+
+li.humidity-stat {
+  color: #626a7c;
+  text-align: left;
+  padding-top: 5px;
+  font-weight: lighter;
+}
+
+li.wind-stat {
+  color: #626a7c;
+  text-align: left;
+  padding-top: 5px;
+  font-weight: lighter;
+}
