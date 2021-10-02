@@ -11,35 +11,60 @@ export default function Forecast() {
       <div className="weather-forecast" id="weather-forecast">
         <div className="row">
           <div className="col">
-            <img src="media/01d.png" width="60" className="image-fluid" />
+            <img
+              src="media/01d.png"
+              width="60"
+              className="image-fluid"
+              alt="weather"
+            />
             <br />
             <span className="forecast-day">Thursday</span> <br />
             <span className="forecast-temperature">17°C</span>
           </div>
 
           <div className="col">
-            <img src="media/10d.png" width="60" className="image-fluid" />
+            <img
+              src="media/10d.png"
+              width="60"
+              className="image-fluid"
+              alt="weather"
+            />
             <br />
             Friday <br />
             <span className="forecast-temperature">9°C</span>
           </div>
 
           <div className="col">
-            <img src="media/04d.png" width="60" className="image-fluid" />
+            <img
+              src="media/04d.png"
+              width="60"
+              className="image-fluid"
+              alt="weather"
+            />
             <br />
             Saturday <br />
             <span className="forecast-temperature">17°C</span>
           </div>
 
           <div className="col">
-            <img src="media/01d.png" width="60" className="image-fluid" />
+            <img
+              src="media/01d.png"
+              width="60"
+              className="image-fluid"
+              alt="weather"
+            />
             <br />
             Sunday <br />
             <span className="forecast-temperature">21°C</span>
           </div>
 
           <div className="col">
-            <img src="media/01d.png" width="60" className="image-fluid" />
+            <img
+              src="media/01d.png"
+              width="60"
+              className="image-fluid"
+              alt="weather"
+            />
             <br />
             Monday <br />
             <span className="forecast-temperature">22°C</span>
