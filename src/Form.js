@@ -1,19 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import "./Form.css";
 
 export default function Form() {
-  function handleFormResponse(response) {}
-
-  let apiKey = "e744bfafcb3c1411c3f393198d753e28";
-  let city = "london";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleFormResponse);
-
+  function handleSubmit() {}
   return (
     <div className="form">
-      <form id="city-form" className="mt-2 mb-4">
+      <form id="city-form" className="mt-2 mb-4" onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
             <input
@@ -21,6 +15,7 @@ export default function Form() {
               placeholder="Enter a City"
               id="enter-city-input"
               className="city-input form-control"
+              onChange={updateCity}
             />
           </div>
 
