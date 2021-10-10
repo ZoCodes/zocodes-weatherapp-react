@@ -4,10 +4,15 @@ import "./MainWeather.css";
 
 export default function WeatherDescription() {
   let [populated, setPopulated] = useState(false);
-  let [temperature, setTemperature] = useState(null);
+  let [mainWeatherData, setMainWeatherData] = useState({});
 
   function handleAxiosResponse(response) {
-    setTemperature(response.data.main.temp);
+    setMainWeatherData({
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+    });
     setPopulated(true);
   }
 
@@ -17,20 +22,25 @@ export default function WeatherDescription() {
         <ul>
           <div className="row no-gutters">
             <div className="col-7">
-              <li className="main-weather-description" id="weather-description">
-                rain rain go away
+              <li
+                className="main-weather-description text-capitalize"
+                id="weather-description"
+              >
+                {mainWeatherData.description}
               </li>
               <li className="humidity-stat">
-                Humidity: <span id="humidity"></span>%
+                Humidity: <span id="humidity">{mainWeatherData.humidity}</span>%
               </li>
               <li className="wind-stat">
-                Wind: <span id="wind"></span> km/h
+                Wind: <span id="wind">{mainWeatherData.wind}</span> km/h
               </li>
             </div>
 
             <div className="col-md">
               <li className="main-temperature">
-                <span id="temperature">{Math.round(temperature)}</span>
+                <span id="temperature">
+                  {Math.round(mainWeatherData.temperature)}
+                </span>
                 {/*eslint-disable-next-line*/}
                 <a href="#" id="celsius-link" className="units active">
                   °C
