@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
 import "./Form.css";
 
 export default function Form() {
-  function handleSubmit() {}
   return (
     <div className="form">
-      <form id="city-form" className="mt-2 mb-4" onSubmit={handleSubmit}>
+      <form id="city-form" className="mt-2 mb-4">
         <div className="row">
           <div className="col-9">
             <input
@@ -15,7 +14,6 @@ export default function Form() {
               placeholder="Enter a City"
               id="enter-city-input"
               className="city-input form-control"
-              onChange={updateCity}
             />
           </div>
 
