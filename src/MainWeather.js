@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+
+import FormatDate from "./FormatDate.js";
+
 import "./MainWeather.css";
 
-export default function WeatherDescription() {
+export default function MainWeather(props) {
   let [populated, setPopulated] = useState(false);
   let [mainWeatherData, setMainWeatherData] = useState({});
 
@@ -12,58 +15,65 @@ export default function WeatherDescription() {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
     });
     setPopulated(true);
   }
 
   if (populated) {
     return (
-      <div className="main-weather">
-        <ul>
-          <div className="row no-gutters">
-            <div className="col-7">
-              <li
-                className="main-weather-description text-capitalize"
-                id="weather-description"
-              >
-                {mainWeatherData.description}
-              </li>
-              <li className="humidity-stat">
-                Humidity: <span id="humidity">{mainWeatherData.humidity}</span>%
-              </li>
-              <li className="wind-stat">
-                Wind: <span id="wind">{mainWeatherData.wind}</span> km/h
-              </li>
-            </div>
+      <div className="Date">
+        <h1 id="searched-city"> Leeds </h1>
+        <FormatDate date={mainWeatherData.date} />
 
-            <div className="col-md">
-              <li className="main-temperature">
-                <span id="temperature">
-                  {Math.round(mainWeatherData.temperature)}
-                </span>
-                {/*eslint-disable-next-line*/}
-                <a href="#" id="celsius-link" className="units active">
-                  °C
-                </a>
-                <span className="unit-break"> | </span>
-                {/*eslint-disable-next-line*/}
-                <a href="#" id="fahrenheit-link" className="units">
-                  °F
-                </a>{" "}
-              </li>
-              <li>
-                <img
-                  src="./media/09d.png"
-                  className="main-weather-img image-fluid"
-                  id="main-icon"
-                  alt="weather"
-                />
-              </li>
-            </div>
+        <div className="main-weather">
+          <ul>
+            <div className="row no-gutters">
+              <div className="col-7">
+                <li
+                  className="main-weather-description text-capitalize"
+                  id="weather-description"
+                >
+                  {mainWeatherData.description}
+                </li>
+                <li className="humidity-stat">
+                  Humidity:{" "}
+                  <span id="humidity">{mainWeatherData.humidity}</span>%
+                </li>
+                <li className="wind-stat">
+                  Wind: <span id="wind">{mainWeatherData.wind}</span> km/h
+                </li>
+              </div>
 
-            <div className="col"></div>
-          </div>
-        </ul>
+              <div className="col-md">
+                <li className="main-temperature">
+                  <span id="temperature">
+                    {Math.round(mainWeatherData.temperature)}
+                  </span>
+                  {/*eslint-disable-next-line*/}
+                  <a href="#" id="celsius-link" className="units active">
+                    °C
+                  </a>
+                  <span className="unit-break"> | </span>
+                  {/*eslint-disable-next-line*/}
+                  <a href="#" id="fahrenheit-link" className="units">
+                    °F
+                  </a>{" "}
+                </li>
+                <li>
+                  <img
+                    src="./media/09d.png"
+                    className="main-weather-img image-fluid"
+                    id="main-icon"
+                    alt="weather"
+                  />
+                </li>
+              </div>
+
+              <div className="col"></div>
+            </div>
+          </ul>
+        </div>
       </div>
     );
   } else {

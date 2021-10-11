@@ -3,7 +3,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 import Form from "./Form";
-import Date from "./Date";
 import CurrentLocation from "./CurrentLocation";
 import MainWeather from "./MainWeather";
 import Forecast from "./Forecast";
@@ -16,7 +15,6 @@ export default function App() {
           <div className="card border-info border-3">
             <div className="card-body">
               <Form />
-              <Date />
               <CurrentLocation />
               <MainWeather />
               <Forecast />

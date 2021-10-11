@@ -8,6 +8,20 @@ a {
   text-decoration: none;
 }
 
+body {
+  color: #54b3a9;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 10px auto;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 20px;
+}
+
 a:hover {
   color: #626a7c;
   text-decoration: none;
